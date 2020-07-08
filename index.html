@@ -68,6 +68,10 @@
         }
       }
 
+      function BubbleComponent(props) {
+        return <div className="bubble" style={props.bubble.style}></div>;
+      }
+
       class App extends React.Component {
         constructor(props) {
           super(props);
@@ -93,7 +97,7 @@
 
         render() {
           return this.state.bubbles.map(bubble => (
-            <div key={bubble.id} className="bubble" style={bubble.style}></div>
+            <BubbleComponent key={bubble.id} bubble={bubble} />
           ));
         }
       }
